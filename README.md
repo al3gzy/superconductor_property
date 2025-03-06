@@ -11,6 +11,6 @@ This project is focused on predicting the superconducting critical temperature (
 - **Cross-Validation**: Cross-validation is performed to assess the stability and generalization of the models. This step ensures that the models are not overfitting the data.
 - **Hyperparameter Tuning**: A Randomized Search is used to fine-tune the hyperparameters of the Random Forest model. This allows us to find the most optimal configuration for the model’s performance.
 - **Feature Importance**: The relative importance of each feature in predicting **Tc** is analyzed to understand which factors are the most influential in determining the superconducting temperature.
-- 
+  
 ## Results
 After evaluating the models, the **Random Forest** model outperforms the others, with the lowest MSE and the highest R² score, making it the best choice for predicting **Tc**.
