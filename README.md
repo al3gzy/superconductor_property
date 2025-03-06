@@ -1,10 +1,16 @@
-# Superconductor Property Prediction  
+# Superconductor Property Prediction
 
-## 📌 Overview  
-Superconductors are materials that can conduct electricity without resistance at low temperatures, and finding materials that exhibit superconductivity at higher temperatures is a significant challenge. The property of superconductors enables significant technological advancements in power grids (lossless power transmission over long distances), magnetic levitation (high-speed transportation with minimal energy consumption) and medical imaging. By incorporating ML methods, we can predict the superconducting properties of materials based on their atomic structure and composition, accelerating the whole discovery process. Therefore, this project aim is to provide information about new high-temperature superconducting materials.
+## Introduction
+This project is focused on predicting the superconducting critical temperature (**Tc**) of materials using machine learning models. Superconductors are materials that allow electricity to flow without resistance at low temperatures, and discovering new ones can have far-reaching implications for technology, including power transmission and medical devices. The goal is to predict the **Tc** based on material properties like composition, atomic structure, and other characteristics.
 
-## Features  
-Models we will use are **Linear Regression**, **Random Forest**, and **Gradient Boosting** due to their complementary strengths in handling regression problems. Linear Regression serves as a simple and interpretable baseline model, assuming a linear relationship between the features and the target variable (Tc). It helps us evaluate whether a straightforward approach can capture the relationship in our data. Random Forest, on the other hand, is a robust ensemble method that handles non-linear relationships and interactions between features. It is less prone to overfitting compared to individual decision trees, making it effective in capturing complex interactions. Lastly, Gradient Boosting is a powerful ensemble technique that builds trees sequentially to correct errors made by previous models, often achieving better performance due to its iterative error minimization. By comparing these models, we aim to identify the best approach for predicting superconducting temperatures (Tc) while balancing simplicity, robustness, and predictive accuracy.
-
+## Features
+- **Data Exploration**: The dataset of superconducting materials is analyzed by plotting correlations, distributions, and category comparisons to better understand the factors influencing **Tc**.
+- **Data Preprocessing**: In this step, continuous variables are normalised, and categorical variables (such as material composition and category) are encoded. This makes the data suitable for training machine learning models.
+- **Model Selection**: Different machine learning models, including Linear Regression, Random Forest, and Gradient Boosting, are tested to predict **Tc**.
+- **Model Evaluation**: Each model’s performance is evaluated by calculating MSE and R² scores, where **MSE** measures the error in predictions, and **R²** shows how well the model explains the variance in **Tc**.
+- **Cross-Validation**: Cross-validation is performed to assess the stability and generalization of the models. This step ensures that the models are not overfitting the data.
+- **Hyperparameter Tuning**: A Randomized Search is used to fine-tune the hyperparameters of the Random Forest model. This allows us to find the most optimal configuration for the model’s performance.
+- **Feature Importance**: The relative importance of each feature in predicting **Tc** is analyzed to understand which factors are the most influential in determining the superconducting temperature.
+- 
 ## Results
-The model evaluations indicate that Random Forest is the most effective, achieving an MSE of 78.74 and an R² of 0.93, which are the lowest error and highest explanatory power among the models tested. Gradient Boosting also performs well with an MSE of 161.57 and an R² of 0.85, surpassing Linear Regression, which has an MSE of 305.32 and an R² of 0.73. These results suggest that Random Forest provides the best balance of accuracy and explanatory power in this analysis.
+After evaluating the models, the **Random Forest** model outperforms the others, with the lowest MSE and the highest R² score, making it the best choice for predicting **Tc**.
